@@ -3,11 +3,12 @@ import React from 'react';
 interface Props {
   title: string;
   description: string;
-  link?: string;
+  appLink?: string;
+  sourceCodeLink?: string;
   techs?: string[];
 }
 
-export default function ProjectCard({ title, description, link = '#', techs = [] }: Props) {
+export default function ProjectCard({ title, description, appLink = '#', sourceCodeLink = '#', techs = [] }: Props) {
   return (
     <article className="rounded-lg border border-gray-800 bg-gray-850 p-6 shadow-sm hover:shadow-md transition">
       <h3 className="text-lg font-semibold text-white">{title}</h3>
@@ -21,8 +22,9 @@ export default function ProjectCard({ title, description, link = '#', techs = []
         </div>
       )}
 
-      <div className="mt-4">
-        <a href={link} className="inline-block rounded bg-indigo-600 px-3 py-1 text-sm font-medium text-white hover:bg-indigo-500">View</a>
+      <div className="mt-4 flex gap-2">
+        <a href={sourceCodeLink} className="inline-block rounded bg-indigo-600 px-3 py-1 text-sm font-medium text-white hover:bg-indigo-500">Source Code</a>
+        <a href={appLink} className="inline-block rounded border border-indigo-600 bg-transparent px-3 py-1 text-sm font-medium text-indigo-300 hover:bg-indigo-600 hover:text-white transition">View</a>
       </div>
     </article>
   );

@@ -6,17 +6,19 @@ import Footer from './components/Footer';
 const projects = [
   {
     id: 1,
-    title: 'Project One',
-    description: 'A short description of project one. What it does and why it exists.',
-    link: '#',
-    techs: ['React', 'TypeScript']
+    title: 'Automata Simulator',
+    description: 'A web-based tool for simulating finite automata',
+    appLink: 'https://github.com/MichaelHarr/automata-tool',
+    sourceCodeLink: 'https://github.com/MichaelHarr/automata-tool',
+    techs: ['React', 'TypeScript', 'Flask']
   },
   {
     id: 2,
-    title: 'Project Two',
-    description: 'A short description of project two. Maybe a link to a demo or repo.',
-    link: '#',
-    techs: ['Node', 'Express']
+    title: 'Lynx Password Manager',
+    description: 'A secure password manager built with Kotlin and Spring Boot',
+    appLink: 'https://github.com/MichaelHarr/lynx-password-manager',
+    sourceCodeLink: 'https://github.com/MichaelHarr/lynx-password-manager',
+    techs: ['Kotlin', 'Spring Boot']
   }
 ];
 
@@ -43,7 +45,7 @@ function App() {
 
             <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
               {projects.map(p => (
-                <ProjectCard key={p.id} title={p.title} description={p.description} link={p.link} techs={p.techs} />
+                <ProjectCard key={p.id} title={p.title} description={p.description} appLink={p.appLink} sourceCodeLink={p.sourceCodeLink} techs={p.techs} />
               ))}
             </div>
           </section>
