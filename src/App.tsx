@@ -2,6 +2,7 @@ import { Element } from 'react-scroll';
 import Navbar from './components/Navbar';
 import ProjectCard from './components/ProjectCard';
 import Footer from './components/Footer';
+import CertificateCard from './components/CertificateCard';
 
 const projects = [
   {
@@ -22,6 +23,23 @@ const projects = [
   }
 ];
 
+const Certifications = [
+  {
+    id: 1,
+    title: 'GCIH - GIAC Certified Incident Handler',
+    description: 'Demonstrated expertise in incident handling and response, including attack techniques and mitigation strategies.',
+    link: 'https://www.credly.com/earner/earned/badge/dc53aaf0-7367-4f6a-8c22-f4c16b0a95ce',
+    certificationDate: 'Issued September 2019'
+  },
+  {
+    id: 2,
+    title: 'GCIA - GIAC Certified Intrusion Analyst',
+    description: 'Validated skills in network traffic analysis, intrusion detection, and incident response.',
+    link: 'https://www.credly.com/badges/dcc5006a-7472-412e-a75c-ab2b4c8e4f47',
+    certificationDate: 'Issued September 2020'
+  }
+]
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
@@ -38,6 +56,9 @@ function App() {
           </section>
         </Element>
 
+        <Element name="Experience">
+        </Element>
+
         <Element name="projects">
           <section>
             <h2 className="text-2xl font-semibold">Projects</h2>
@@ -51,17 +72,20 @@ function App() {
           </section>
         </Element>
 
-        <Element name="about">
+        <Element name="Certifications">
           <section>
-            <h2 className="text-2xl font-semibold">About</h2>
-            <p className="mt-2 text-gray-400 max-w-prose">A brief background and additional context about your experience and interests. Replace this with your full bio.</p>
+            <h2 className="text-2xl font-semibold">Past Certifications</h2>
+            {Certifications.map(c => (
+              <CertificateCard key={c.id} title={c.title} description={c.description} link={c.link} certificationDate={c.certificationDate} />
+            ))}
           </section>
         </Element>
 
         <Element name="contact">
           <section>
             <h2 className="text-2xl font-semibold">Contact</h2>
-            <p className="mt-2 text-gray-400">Email: <a className="text-indigo-300 hover:underline" href="mailto:you@example.com">you@example.com</a></p>
+            <p className="mt-2 text-gray-400">Github: <a className="text-indigo-300 hover:underline" href="https://github.com/MichaelHarr">MichaelHarr</a></p>
+            <p className="mt-1 text-gray-400">LinkedIn: <a className="text-indigo-300 hover:underline" href="https://www.linkedin.com/in/michael-harrison-5926b01ba">Michael Harrison</a></p>
           </section>
         </Element>
       </main>
